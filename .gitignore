@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+.idea/
+.vscode/
+
+# pytest, reports, drivers, logs
+.reports/
+reports/
+.screenshots/
+.chromedriver_cache/
+webdriver_cache/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
