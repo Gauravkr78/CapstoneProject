@@ -40,4 +40,4 @@ jobs:
       # 5️⃣ Run pytest in headless mode
       - name: Run Selenium tests
         run: |
-          pytest -v --headless --disable-warnings --maxfail=1
+          pytest -v --disable-warnings --maxfail=1
