@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout the code from GitHub
+      # 1️⃣ Checkout the code
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -28,16 +28,9 @@ jobs:
           pip install -r requirements.txt
           pip install pytest selenium webdriver-manager
 
-      # 4️⃣ Set up Chrome and ChromeDriver
-      - name: Set up Chrome
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: stable
-
-      - name: Set up ChromeDriver
-        uses: nanasess/setup-chromedriver@v2
-
-      # 5️⃣ Run pytest in headless mode
+      # 4️⃣ Run Selenium tests
       - name: Run Selenium tests
         run: |
-          pytest -v --disable-warnings --maxfail=1
+          # Set CI environment variable for headless
+          export CI=true
+          pytest -v --disable-warnings --maxfail=1 --alluredir=reports
